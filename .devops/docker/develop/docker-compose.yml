@@ -1,0 +1,24 @@
+version: '4.2'
+
+services:
+    nats-nginx:
+        image: nginx:alpine
+        container_name: nats-nginx
+        volumes:
+            - ../../../:/var/www/app
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+        networks:
+            - nats-network
+
+    nats-backend:
+        container_name: nats-backend
+        build: .
+        volumes:
+            - ../../../:/var/www/app
+        working_dir: /var/www/app
+        networks:
+            - nats-network
+
+networks:
+    nats-network:
+        external: true
