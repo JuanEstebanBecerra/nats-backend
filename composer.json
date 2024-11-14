@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "basis-company/nats": "^0.26.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9"
     },
@@ -22,7 +23,9 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Kernel\\": "src/Kernel",
+            "NatsConnection\\": "src/NatsConnection/src"
         }
     },
     "autoload-dev": {
